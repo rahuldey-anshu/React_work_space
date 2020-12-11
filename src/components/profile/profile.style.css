@@ -97,3 +97,9 @@
 .Text {
     font-size: 45px;
 }
+
+.TextField {
+    width: 50%;
+    padding: 5px;
+    margin-top: 10px;
+}
