@@ -28,25 +28,85 @@ class App extends Component {
   // }
 
   state = {
-    count: 10,
+    count: 0,
+  };
+
+  //set a interval id
+  intervalId = null;
+
+  //increamentCount
+  increamentCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+  //decreamentCount
+  decreamentCount = () => {
+    if (this.state.count > 0) {
+      this.setState({ count: this.state.count - 1 });
+    }
+  };
+
+  //startTimer function
+  startTimer = () => {
+    if (this.state.count > 0) {
+      this.intervalId = setInterval(() => {
+        this.setState({ count: this.state.count - 1 }, () => {
+          if (this.state.count == 0) {
+            alert("Timer Finished");
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+          }
+        });
+      }, 500);
+    }
+  };
+
+  //stopTimer function
+  stopTimer = () => {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+  };
+
+  //ResetTimer
+
+  resetTimer = () => {
+    this.setState({ count: 0 });
+    clearInterval(this.intervalId);
+    this.intervalId = null;
   };
 
   render() {
     //this.getContext(this)
 
     return (
-      <div>
-        <h1>State is a heart of react</h1>
-        <h1>Count = {this.state.count}</h1>
-        <button
-          onClick={() => {
-            this.setState({ count: this.state.count + 1 });
+      <div className="App">
+        <h1 className="Heading">Simple Timer</h1>
+        <div className="Container">
+          <button className="btn" onClick={this.decreamentCount}>
+            {" "}
+            -{" "}
+          </button>
 
-            console.log("clicked..", this.state.count);
-          }}
-        >
-          Add +1
-        </button>
+          <span className="Text">{this.state.count}</span>
+
+          <button className="btn" onClick={this.increamentCount}>
+            {" "}
+            +{" "}
+          </button>
+        </div>
+
+        <div className="Container">
+          <button onClick={this.startTimer} className="btn">
+            Start
+          </button>
+          <button onClick={this.stopTimer} className="btn">
+            Stop
+          </button>
+          <button onClick={this.resetTimer} className="btn">
+            Reset
+          </button>
+        </div>
       </div>
 
       //   <div>
