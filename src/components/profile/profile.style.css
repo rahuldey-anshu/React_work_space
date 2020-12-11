@@ -1,18 +1,17 @@
-.Container {
+/* .Container {
     width: 100%;
     min-height: 100px;
     padding: 20px;
     margin-top: 50px;
     background-color: aqua;
     border: 1px solid #ddd;
-}
+} */
 
 .Bio {
     margin-bottom: 30px;
-    border: 2px darkgreen ;
+    border: 2px darkgreen;
     box-sizing: border-box;
     box-shadow: #222222;
-    
 }
 
 .Bio h3 {
@@ -24,13 +23,10 @@
     font-size: 17px;
     color: #222222;
     margin-top: 5px;
-
 }
 
 .Skills {
     margin-bottom: 30px;
-    
-
 }
 
 .Skills h3 {
@@ -51,9 +47,9 @@
     background: #efefef;
     border-radius: 5px;
 }
+
 .Links {
     margin-bottom: 30px;
-
 }
 
 .Links ul {
@@ -74,14 +70,30 @@
     border-radius: 5px;
 }
 
-.Links ul li a{
+.Links ul li a {
     color: #020202;
     font-weight: bold;
     text-decoration: none;
-
 }
 
 .Links ul li a:hover {
     columns: #ffa500;
 }
 
+.btn {
+    background-color: white;
+    /* Green */
+    border: 3px solid #4CAF50;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.Text {
+    font-size: 45px;
+}
