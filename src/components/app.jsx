@@ -7,7 +7,7 @@ import "./profile/profile.style.css";
 // import Skills from './profile/skills'
 import Channel from "./channel/channel";
 import Event from "./channel/event"
-
+import Input from './input/index'
 // class Child extends Component {
 
 //     render() {
@@ -53,7 +53,7 @@ class App extends Component {
     if (this.state.count > 0) {
       this.intervalId = setInterval(() => {
         this.setState({ count: this.state.count - 1 }, () => {
-          if (this.state.count === 0) {
+          if (this.state.count == 0) {
             alert("Timer Finished");
             clearInterval(this.intervalId);
             this.intervalId = null;
@@ -84,6 +84,7 @@ class App extends Component {
 
     return (
       <div className="App">
+      <Input/>
         <Channel />
         <Event/>
         <h1 className="Heading"> Simple Timer </h1>{" "}
